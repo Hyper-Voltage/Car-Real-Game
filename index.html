@@ -1,0 +1,420 @@
+<html lang="en" data-rex-header="notch" style="--rex-nav-h: 0px; --rex-nav-inset-right: 0px; --rex-nav-inset-left: 0px;"><head><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Clutch &amp; Shift | Free Manual Driving Simulator</title>
+<meta name="description" content="Drive a manual car through city traffic and onto the highway. Control the clutch, shift gears, and avoid stalls in this free browser driving simulator.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0c1118">
+<link rel="canonical" href="https://random.express/manual-driving-simulator/">
+<meta property="og:title" content="Clutch &amp; Shift | Free Manual Driving Simulator">
+<meta property="og:description" content="Start the engine, find the bite point and shift through six gears in city traffic and on the highway. A free stick shift simulator for your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://random.express/manual-driving-simulator/">
+<meta property="og:image" content="https://random.express/assets/social/projects/manual-driving-simulator.png">
+<meta property="og:image:alt" content="The cockpit of a sporty manual hatchback at a city intersection, with the gear lever, tachometer and traffic ahead.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Clutch &amp; Shift | Free Manual Driving Simulator">
+<meta name="twitter:description" content="A free manual transmission driving simulator: clutch, six gears, stalls, hill starts, city traffic and a highway.">
+<meta name="twitter:image" content="https://random.express/assets/social/projects/manual-driving-simulator.png">
+<meta name="twitter:image:alt" content="The cockpit of a sporty manual hatchback at a city intersection, with the gear lever, tachometer and traffic ahead.">
+<link rel="icon" href="/assets/favicon.svg">
+<link rel="stylesheet" href="./styles.css?v=20261123-results-short3">
+<!-- Explicit relative module URLs also work in browsers without import-map support. -->
+
+<link rel="modulepreload" href="./vendor/three.module.min.js">
+<link rel="modulepreload" href="./vendor/three.core.min.js">
+<script src="/assets/random-express-nav.js?v=20261124-rating-tags" defer=""></script>
+<script src="/assets/random-express-analytics.js" defer=""></script>
+<script src="/assets/random-express-account.js?v=20261118-acct1" defer=""></script>
+<script src="/assets/random-express-progress.js?v=20261120-saves1" defer=""></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Clutch & Shift","alternateName":"Manual Driving Simulator","url":"https://random.express/manual-driving-simulator/","description":"A free 3D manual transmission driving simulator for the browser. Operate a clutch and a six-speed gearbox in a sporty hatchback, drive through a city with traffic lights and stop signs, handle hill starts in a hilly neighborhood and accelerate onto a highway loop. Includes Free Drive and five challenges. Settings and best scores are saved on this device, with optional Random.Express account sync.","genre":["Driving","Simulation"],"gamePlatform":"Web browser with WebGL","playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Any","isAccessibleForFree":true,"inLanguage":"en-US","publisher":{"@type":"Organization","name":"Random.Express","url":"https://random.express/"}}</script>
+<script type="module">
+// A dropped connection on any of the ~30 game modules leaves the page stuck loading: reload once, then offer a retry.
+const entry = './js/app.mjs?v=20261123-results', key = 'rex:clutch:boot-retry';
+const store = (fn) => { try { return fn(sessionStorage); } catch { return null; } };
+document.getElementById('retry-startup').addEventListener('click', () => {
+  if (document.getElementById('game').dataset.phase !== 'graphics-stopped') { location.reload(); return; }
+  const url = new URL(location.href);
+  url.searchParams.set('graphics', 'compatibility');
+  location.replace(url.href);
+});
+import(entry).then(module => module.boot).then(() => store(s => s.removeItem(key)), (err) => {
+  if (!(err instanceof TypeError) || !/fetch|load|import/i.test(err.message)) throw err;
+  if (store(s => s.getItem(key)) !== entry && store(s => (s.setItem(key, entry), true))) { location.reload(); return; }
+  store(s => s.removeItem(key));
+  window.RandomExpressHealth?.report(err, {source: '/manual-driving-simulator/js/app.mjs'});
+  const box = document.getElementById('fallback');
+  document.getElementById('loading').hidden = true;
+  box.querySelector('h2').textContent = 'Clutch & Shift did not finish loading';
+  box.querySelector('p').textContent = 'Part of the game did not download. Check your connection and try again.';
+  document.getElementById('retry-startup').hidden = false;
+  box.hidden = false;
+});
+</script>
+  <script>(function(){if(navigator.webdriver||/bot|crawler|spider|slurp|headless|phantom|selenium|playwright|puppeteer|lighthouse|codex|openai|chatgpt|claude|anthropic/.test(navigator.userAgent.toLowerCase())||/(?:^|;\s*)rx_no_analytics=1(?:;|$)/.test(document.cookie))window["ga-disable-G-JRPPKCVRTP"]=true})()</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JRPPKCVRTP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JRPPKCVRTP');
+  </script>
+<script src="/assets/random-express-analytics.js?v=20261102-ingame1" data-rex-sharing-loader="true"></script><style>:root[data-rex-header="rail"] body{padding-left:48px;box-sizing:border-box}:root[data-rex-header] random-express-nav[header-style]:not([header-style="classic"]){min-height:var(--rex-nav-h)!important;height:var(--rex-nav-h)!important}:root[data-rex-expanded] body{box-sizing:border-box;padding-inline:env(safe-area-inset-left, 0px) env(safe-area-inset-right, 0px)}:root[data-rex-expanded] random-express-nav[expand-experience]{height:0;min-height:0}:root[data-rex-expanded] [data-rex-expand-stage]{height:100dvh}:root[data-rex-expanded] [data-rex-notch]{display:none}</style><link rel="stylesheet" href="/assets/activity-world.css?v=20261101-turkey1"></head>
+<body data-rex-app="manual-driving-simulator" class="mouse-capable">
+<noscript><style>#menu[hidden]{display:flex!important}#menu button,#menu .seg,#diff-note,.menu-challenges{display:none!important}</style><p>Enable JavaScript to drive. Read the instructions and controls below.</p></noscript>
+<random-express-nav current="manual-driving-simulator" current-title="Clutch &amp; Shift" mode="creation" theme="dark" header-style="notch"></random-express-nav>
+<main id="game" class="game" data-phase="menu" aria-label="Clutch and Shift manual driving simulator" data-graphics-mode="standard" data-vehicle="apex" data-ready="1" data-drive-kind="free" data-mobile-moving="false">
+  <div id="stage" class="stage">
+    <canvas id="view" tabindex="0" aria-label="3D driving view. A/D steer; F ignition; E/Q or 1–6 shift; N neutral; R reverse; T switches manual and automatic; Escape pauses. W gas, S brake, Space or Shift clutch. Drag to look." data-engine="three.js r180" width="831" height="570"></canvas>
+
+    <div id="hud" class="hud" hidden="">
+      <div class="hud-tl">
+        <div class="chip mode-chip">
+          <span id="hud-mode">Free Drive · Realistic</span>
+          <strong id="hud-obj">City, Main Street Roundabout, Maple Heights and Loop 1 Expressway are open.</strong>
+          <div class="progress" id="hud-progress" hidden=""><i id="hud-prog"></i></div>
+        </div>
+        <div class="chip time-chip" id="hud-time" hidden="">0:00</div>
+      </div>
+      <div class="hud-tr">
+        <canvas id="minimap" class="minimap" width="300" height="300" aria-hidden="true"></canvas>
+        <div class="hud-btns">
+          <button id="mobile-fullscreen" class="icon-btn" type="button" data-act="fullscreen" aria-label="Enter fullscreen" title="Enter fullscreen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
+          <button class="icon-btn" type="button" data-act="camera" aria-label="Change camera (C)" title="Change camera (C)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="2"></circle></svg><span id="cam-label" class="btn-label">COCKPIT</span></button>
+          <button class="icon-btn" type="button" data-act="pause" aria-label="Pause and settings (Esc)" title="Pause (Esc)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></button>
+        </div>
+      </div>
+
+      <div id="dash" class="dash" role="group" aria-label="Instruments">
+        <div class="bars" id="pedal-bars" aria-hidden="true">
+          <div class="bar clutch" title="Clutch pedal"><i id="bar-clutch" style="height: 0%;"></i><b class="bite" id="bar-bite" style="bottom: 74.5941%;"></b><span>C</span></div>
+          <div class="bar brake" title="Brake"><i id="bar-brake" style="height: 0%;"></i><span>B</span></div>
+          <div class="bar gas" title="Throttle"><i id="bar-gas" style="height: 0%;"></i><span>G</span></div>
+        </div>
+        <div class="readout">
+          <div class="gear" id="hud-gear" aria-label="Gear">1</div>
+          <div class="spd"><b id="hud-speed">0</b><span id="hud-unit">mph</span></div>
+          <div class="rpm" aria-hidden="true"><i id="hud-rpm" style="width: 0%;"></i><s id="hud-redline" style="left: 81.25%;"></s></div>
+          <div class="status warn" id="hud-status" role="status">ENGINE OFF</div>
+        </div>
+      </div>
+
+      <div id="range-controls" class="range-controls" role="group" aria-label="Semi gear set" hidden="">
+        <p id="hud-range" class="range-state" role="status" aria-live="polite">LOW gears 1–5</p>
+        <div class="range-choices"><button type="button" data-act="range:low" aria-label="Select low gears 1 to 5" aria-pressed="true">LOW<span>1–5</span></button><button type="button" data-act="range:high" aria-label="Select high gears 6 to 10" aria-pressed="false">HIGH<span>6–10</span></button></div>
+        <p id="range-help" class="range-help">Clutch → N → gear</p>
+      </div>
+      <div id="gate" class="gate" role="group" aria-label="H-pattern gear lever. Hold clutch and drag the knob through neutral into a gear.">
+        <svg viewBox="-72.5 -45 145 90" aria-hidden="true">
+          <ellipse class="gate-boot" cx="0" cy="36" rx="8" ry="4"></ellipse><line class="gate-stick" x1="0" y1="36" x2="0" y2="0"></line>
+          <path class="gate-slot" d="M-50 -25V0M-25 -25V25M0 -25V25M25 -25V25M50 -25V0M-50 0H50"></path>
+          
+          
+          <text x="-25" y="-31" data-gear="1">1</text><text x="-25" y="39" data-gear="2">2</text><text x="0" y="-31" data-gear="3">3</text><text x="0" y="39" data-gear="4">4</text><text x="25" y="-31" data-gear="5">5</text><text x="25" y="39" data-gear="6">6</text><text x="50" y="-31" data-gear="7">7</text><text x="-50" y="-31" data-gear="-1">R</text><g class="gate-knob" transform="translate(0 0)"><circle r="10"></circle><circle r="4" class="dot"></circle><circle class="gate-hit" r="19"></circle></g>
+        </svg>
+      </div>
+
+      <div id="auto-selector" class="auto-selector" role="group" aria-label="Automatic gear selector" hidden="">
+        <button type="button" data-auto-act="gear:-1" data-dir="-1" aria-pressed="false" aria-label="Reverse">R</button>
+        <button type="button" data-auto-act="gear:0" data-dir="0" aria-pressed="false" aria-label="Neutral">N</button>
+        <button type="button" data-auto-act="gear:1" data-dir="1" aria-pressed="true" aria-label="Drive">D</button>
+      </div>
+      <button id="trans-switch" class="trans-switch" type="button">Switch to Automatic (T)</button>
+      <button id="mouse-switch" class="trans-switch mouse-switch" type="button">Use mouse as shifter</button>
+
+      <p id="hint" class="hint" aria-live="polite" hidden=""></p>
+      <div id="coach" class="hint coach" role="status" aria-live="polite" hidden="" data-kind=""></div>
+      <div id="auto-offer" class="auto-offer" role="alert" hidden="">
+        <p><strong>Manual not clicking?</strong> <span>Automatic handles the clutch, gears and restarts. Switch any time.</span></p>
+        <div><button id="offer-switch" class="cta" type="button">Switch to Automatic <kbd>T</kbd></button><button id="offer-dismiss" class="ghost" type="button">Keep trying</button></div>
+      </div>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <div id="flash" class="flash" aria-hidden="true"></div>
+      <button id="mouse-capture" class="ghost mouse-capture" type="button" hidden="">Click to control shifter · Esc releases mouse</button>
+      <div id="look-hint" class="look-hint" hidden="">Glance <kbd>←</kbd><kbd>→</kbd> · drag to look</div>
+    </div>
+
+    <div id="touch" class="touch" hidden="">
+      <div class="t-left">
+        <div class="t-steer" data-touch="steer" role="slider" tabindex="0" aria-valuemin="-100" aria-valuemax="100" aria-valuenow="0" aria-label="Left steering: drag left or right, or use arrow keys">
+          <svg viewBox="-50 -50 100 100" aria-hidden="true" class="steer-wheel"><circle r="40" fill="none" stroke="currentColor" stroke-width="7"></circle><path d="M-40 4h22l8 9h20l8-9h22M0 13v27" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"></path><rect x="-3" y="-46" width="6" height="10" rx="2" fill="#ff6a2b"></rect></svg>
+          <span>STEER</span>
+        </div>
+        <button type="button" class="t-pedal gas" data-touch="throttle" aria-label="Left gas pedal: hold to accelerate, slide up for more"><i style="height: 0%;"></i><span>GAS</span></button>
+        <div class="t-clutch-wrap">
+          <button type="button" class="t-pedal clutch" data-touch="clutch" aria-label="Clutch pedal: hold to press, slide up to release slowly"><i id="t-clutch-fill" style="height: 0%;"></i><span>CLUTCH</span></button>
+          <button type="button" class="t-latch" id="t-latch" data-act="latch" aria-pressed="false" aria-label="Clutch latch: keep the clutch pressed">HOLD</button>
+        </div>
+        <button type="button" class="t-pedal brake" data-touch="brake" aria-label="Brake pedal"><i></i><span>BRAKE</span></button>
+      </div>
+      <div class="t-top">
+        <button type="button" class="t-btn" data-act="ignition" aria-label="Ignition">START</button>
+        <button type="button" class="t-btn" data-act="park" id="t-park" aria-pressed="false" aria-label="Parking brake">(P)</button>
+      </div>
+      <div id="touch-shifter" class="touch-shifter" role="group" aria-label="Touch gear controls">
+        <button class="t-shift" type="button" data-act="downshift" aria-label="Shift down">−</button><button class="t-shift" type="button" data-act="upshift" aria-label="Shift up">+</button>
+        <button class="t-shift" type="button" data-act="gear:0" aria-label="Select neutral">N</button><button class="t-shift" type="button" data-act="gear:-1" aria-label="Select reverse when stopped">R</button>
+      </div>
+      <div class="t-right">
+        <div class="t-steer" data-touch="steer" role="slider" tabindex="0" aria-valuemin="-100" aria-valuemax="100" aria-valuenow="0" aria-label="Right steering: drag left or right, or use arrow keys">
+          <svg viewBox="-50 -50 100 100" aria-hidden="true" class="steer-wheel"><circle r="40" fill="none" stroke="currentColor" stroke-width="7"></circle><path d="M-40 4h22l8 9h20l8-9h22M0 13v27" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"></path><rect x="-3" y="-46" width="6" height="10" rx="2" fill="#ff6a2b"></rect></svg>
+          <span>STEER</span>
+        </div>
+        <button type="button" class="t-pedal gas" data-touch="throttle" aria-label="Right gas pedal: hold to accelerate, slide up for more"><i id="t-gas-fill" style="height: 0%;"></i><span>GAS</span></button>
+      </div>
+    </div>
+  </div>
+
+  <aside id="lesson" class="lesson" aria-label="Guided driving lesson" hidden="">
+    <div class="lesson-copy" role="status" aria-live="polite" aria-atomic="true"><span id="lesson-progress"></span><strong id="lesson-title"></strong><p id="lesson-instruction"></p></div>
+    <div class="lesson-actions"><button id="lesson-retry" class="ghost" type="button" aria-label="Restart lesson">Restart</button><button id="lesson-exit" class="ghost" type="button" aria-label="Exit lesson">Exit</button><button id="lesson-done" class="cta" type="button" hidden="">Free Drive</button></div>
+  </aside>
+  <section id="menu" class="overlay menu" aria-labelledby="game-title">
+    <div class="menu-card">
+      <p class="kicker">Manual driving simulator</p>
+      <h1 id="game-title">Clutch <span>&amp;</span> Shift</h1>
+      <p class="tagline">Drive a six-speed manual car. Work the clutch, shift smoothly and explore city streets and highways.</p>
+      <div class="drive-actions"><button id="play" class="cta" type="button">Free Drive <small>No timer. The whole map.</small></button><button id="learn" class="ghost" type="button" data-act="lesson">Guided tutorial</button></div>
+      <div class="seg-row">
+      <div class="seg trans-seg" role="radiogroup" aria-label="Transmission">
+        <button type="button" role="radio" data-trans="auto" aria-checked="false">Automatic</button>
+        <button type="button" role="radio" data-trans="manual" aria-checked="true">Manual</button>
+      </div>
+      <div class="seg diff-seg" role="radiogroup" aria-label="Difficulty">
+        <button type="button" role="radio" data-diff="guided" aria-checked="false">Guided</button>
+        <button type="button" role="radio" data-diff="standard" aria-checked="false">Standard</button>
+        <button type="button" role="radio" data-diff="realistic" aria-checked="true">Realistic</button>
+      </div>
+      </div>
+      <div class="shift-row"><span id="shift-label">Shift with</span><div class="seg shift-seg" role="radiogroup" aria-labelledby="shift-label"><button type="button" role="radio" data-shift-pick="drive" aria-checked="false">Mouse</button><button type="button" role="radio" data-shift-pick="look" aria-checked="true">Keyboard</button></div></div>
+      <p class="diff-note" id="diff-note">Sharp clutch, easy stalls, strong engine braking. Release the parking brake yourself.</p>
+      <label class="vehicle-pick"><span>Vehicle</span><select data-vehicle-pick="" aria-label="Vehicle"><option value="vanta">Hatchback: Vanta GT (FWD)</option><option value="apex">Sports car: Apex V8 (RWD)</option><option value="moriya">Turbo tuner: RZ Turbo (RWD)</option><option value="pickup">Old pickup: 1972 half-ton</option><option value="semi">Semi truck (bobtail)</option><option value="semi-trailer">Semi truck + 53 ft trailer</option></select></label>
+      <div class="menu-utils"><button id="menu-fullscreen" class="ghost desktop-only" type="button" data-act="fullscreen" aria-label="Enter fullscreen" title="Enter fullscreen"><span class="fullscreen-label">Fullscreen</span></button>
+        <button class="ghost" type="button" data-go="controls">Controls</button>
+        <button class="ghost" type="button" data-go="settings">Settings</button>
+        <a class="ghost mobile-only" href="/">Home</a>
+      </div>
+    </div>
+    <div class="menu-challenges">
+      <h2>Challenges</h2>
+      <ol id="challenge-list" class="challenge-list"><li><button class="ch" type="button" data-ch="first-gear"><span class="n">1</span><strong>First Gear</strong><span class="meta">Practice clean starts from a stop. Find the bite, add a little gas, and roll away without stalling.</span><span class="best">1–2 min</span></button></li><li><button class="ch" type="button" data-ch="smooth-operator"><span class="n">2</span><strong>Smooth Operator</strong><span class="meta">A short downtown loop with traffic lights. Every shift and every stop is graded for smoothness.</span><span class="best">2–3 min</span></button></li><li><button class="ch" type="button" data-ch="rush-hour"><span class="n">3</span><strong>Rush Hour</strong><span class="meta">Bumper-to-bumper downtown. Constant stop-and-go tests your launches and your patience.</span><span class="best">2–4 min</span></button></li><li><button class="ch" type="button" data-ch="highway-run"><span class="n">4</span><strong>Highway Run</strong><span class="meta">Accelerate up the on-ramp, merge at speed, run a full lap in the top gears, then exit and downshift back to city speed.</span><span class="best">3–4 min</span></button></li><li><button class="ch" type="button" data-ch="no-stall"><span class="n">5</span><strong>No Stall</strong><span class="meta">Stop signs, a steep hill start and traffic lights. One stall and it is over.</span><span class="best">2–3 min</span></button></li><li class="ch-vehicle"><select data-vehicle-pick="" aria-label="Vehicle"><option value="vanta">Hatchback: Vanta GT (FWD)</option><option value="apex">Sports car: Apex V8 (RWD)</option><option value="moriya">Turbo tuner: RZ Turbo (RWD)</option><option value="pickup">Old pickup: 1972 half-ton</option><option value="semi">Semi truck (bobtail)</option><option value="semi-trailer">Semi truck + 53 ft trailer</option></select></li></ol>
+    </div>
+  </section>
+
+  <section id="choice" class="overlay sheet" role="dialog" aria-modal="true" aria-labelledby="choice-title" hidden="">
+    <div class="sheet-card choice-card">
+      <h2 id="choice-title" tabindex="-1">How do you want to drive?</h2>
+      <div class="choice-options">
+        <button id="choose-mouse" class="choice-featured" type="button"><strong>Mouse as your gear shifter <em>Most real</em></strong><span>Manual driving. Move the mouse to work the lever, hold left-click for clutch, right-click for gas.</span></button>
+        <button id="choose-auto" type="button"><strong>Automatic</strong><span>Gas, brake, steer. The car starts itself and shifts for you.</span></button>
+        <button id="choose-manual" type="button"><strong>Keyboard manual</strong><span>Clutch, gears and stalls, with on-screen help for every step.</span></button>
+      </div>
+      <button id="choose-lesson" class="ghost" type="button" data-act="lesson">Teach me manual step by step</button>
+      <p class="choice-note">You can switch any time from the menu, or by pressing Pause.</p>
+    </div>
+  </section>
+
+  <section id="mouse-ask" class="overlay sheet" role="dialog" aria-modal="true" aria-labelledby="mouse-ask-title" hidden="">
+    <div class="sheet-card choice-card">
+      <h2 id="mouse-ask-title" tabindex="-1">Use your mouse as the gear shifter?</h2>
+      <p class="choice-lead">It is the most real way to drive: your hand moves the lever through the gate while you work the pedals.</p>
+      <div class="choice-options">
+        <button id="mouse-yes" class="choice-featured" type="button"><strong>Yes, use my mouse</strong><span>Move the mouse to shift. Hold left-click for clutch, right-click for gas. <kbd>Space</kbd> brakes.</span></button>
+        <button id="mouse-no" type="button"><strong>No, use the keyboard</strong><span><kbd>Space</kbd> clutch, <kbd>W</kbd> gas, <kbd>S</kbd> brake. Number keys or <kbd>E</kbd>/<kbd>Q</kbd> shift.</span></button>
+      </div>
+      <p class="choice-note">You can change this any time from the menu or by pressing Pause.</p>
+    </div>
+  </section>
+
+  <section id="tutorial" class="overlay sheet" role="dialog" aria-modal="true" aria-labelledby="tutorial-title" hidden="">
+    <div class="sheet-card tutorial-card">
+      <p class="kicker">A quick start</p>
+      <h2 id="tutorial-title" tabindex="-1">Learn to drive a manual</h2>
+      <p class="tutorial-intro"><span class="tutorial-keyboard">Start with <kbd>F</kbd>. Steer with <kbd>A</kbd> <kbd>D</kbd>. Choose your pedals:</span><span class="tutorial-on-touch"><b>GAS and STEER on both sides.</b> Use opposite hands. CLUTCH and BRAKE help you stop and shift; the gear lever is in the middle.</span></p>
+      <div class="tutorial-modes" role="group" aria-label="Mouse control mode">
+        <button type="button" data-mouse-mode="drive" aria-pressed="false"><strong>Mouse shifter</strong><span>Left-click clutch · right-click gas<br><kbd>Space</kbd> brake</span></button>
+        <button type="button" data-mouse-mode="look" aria-pressed="true"><strong>Keyboard driving</strong><span><kbd>Space</kbd> clutch · <kbd>W</kbd> gas<br><kbd>S</kbd> brake · drag to look</span></button>
+      </div>
+      <p id="tutorial-mouse" class="tutorial-detail">Hold Space for the clutch. While holding it, tap or drag the lower-right shifter, use 1–6, or E/Q. Release Space gently and add W for gas.</p>
+      <p class="tutorial-shifts"><b>Three ways to shift:</b> the number keys, <kbd>E</kbd>/<kbd>Q</kbd> up/down, or the fixed H-pattern shifter. Clutch in first. <kbd>N</kbd> neutral · <kbd>R</kbd> reverse.</p>
+      <p class="tutorial-touch"><span id="touch-shift-help">Hold CLUTCH, drag the central lever through neutral into first, add GAS and ease the clutch out.</span><br><b>HOLD</b> keeps the clutch pressed while you shift. The horizontal channel is neutral; <b>R</b> is reverse. Tap fullscreen for more room.</p>
+      <p class="lesson-invite">New to manual driving? The guided tutorial teaches starting, clutch control, steering, shifting, stopping, reversing and parking in a quiet practice drive.</p>
+      <button id="tutorial-lesson" class="cta" type="button" data-act="lesson">Start guided tutorial</button>
+      <button id="tutorial-start" class="ghost" type="button">Skip tutorial · drive now</button>
+    </div>
+  </section>
+
+  <section id="settings" class="overlay sheet" aria-labelledby="settings-title" hidden="">
+    <div class="sheet-card">
+      <header class="sheet-head"><button class="back" type="button" data-go="back" aria-label="Back">←</button><h2 id="settings-title">Settings</h2></header>
+      <div class="settings">
+        <label class="set"><span>Transmission</span><select id="set-transmission"><option value="auto">Automatic</option><option value="manual">Manual</option></select></label>
+        <label class="set"><span>Vehicle</span><select id="set-vehicle" data-vehicle-pick=""><option value="vanta">Hatchback: Vanta GT (FWD)</option><option value="apex">Sports car: Apex V8 (RWD)</option><option value="moriya">Turbo tuner: RZ Turbo (RWD)</option><option value="pickup">Old pickup: 1972 half-ton</option><option value="semi">Semi truck (bobtail)</option><option value="semi-trailer">Semi truck + 53 ft trailer</option></select></label>
+        <p class="set-note vehicle-blurb">Front-engine 6.2 L V8 and a seven-speed, rear-wheel drive. Lots of torque, mind the throttle.</p>
+        <label class="set"><span>Steering wheel side</span><select id="set-drive-side"><option value="lhd">Left-hand drive (US)</option><option value="rhd">Right-hand drive (UK, Japan, Australia)</option></select></label>
+        <label class="set"><span>Difficulty</span><select id="set-difficulty"><option value="guided">Guided</option><option value="standard">Standard</option><option value="realistic">Realistic</option></select></label>
+        <label class="set"><span>Traffic (Free Drive)</span><select id="set-traffic"><option value="light">Light</option><option value="normal">Normal</option><option value="busy">Busy</option></select></label>
+        <label class="set desktop-setting"><span>Mouse controls</span><select id="set-mouse"><option value="look">Look around (keyboard pedals)</option><option value="drive">Mouse shifter: left clutch, right gas</option></select></label>
+        <label class="set desktop-setting"><span>Starting camera</span><select id="set-camera"><option value="cockpit">Cockpit</option><option value="hood">Hood</option><option value="chase">Chase</option></select></label>
+        <label class="set mobile-setting"><span>Phone starting view</span><select id="set-mobile-camera"><option value="cockpit">Inside the car (default)</option><option value="hood">Hood (easier view)</option><option value="chase">Chase</option></select></label>
+        <label class="set"><span>Touch shifting</span><select id="set-touch-shifter"><option value="gate">Drag H-pattern lever (standard)</option><option value="buttons">Shift buttons (easier)</option></select></label>
+        <label class="set mobile-setting"><span>Show minimap while driving</span><input id="set-mobile-map" type="checkbox"></label>
+        <label class="set"><span>Speed units</span><select id="set-units"><option value="mph">mph</option><option value="kmh">km/h</option></select></label>
+        <label class="set"><span>Volume</span><input id="set-volume" type="range" min="0" max="1" step="0.05"></label>
+        <label class="set"><span>Mute all sound</span><input id="set-muted" type="checkbox"></label>
+        <label class="set" title="Keeps the tires gripping when the gas or brake key is held all the way down. Turn it off to spin the wheels and slide."><span>Traction and stability control</span><input id="set-traction" type="checkbox"></label>
+        <label class="set"><span>Clutch and pedal bars</span><input id="set-clutchbar" type="checkbox"></label>
+        <label class="set"><span>Driving tips</span><input id="set-hints" type="checkbox"></label>
+        <label class="set" title="Smooths clutch release on touch screens. You still pick every gear."><span>Touch clutch assist</span><input id="set-assist" type="checkbox"></label>
+        <label class="set"><span>Touch controls</span><select id="set-touch"><option value="auto">Automatic</option><option value="on">Always show</option><option value="off">Hide</option></select></label>
+        <label class="set"><span>Graphics</span><select id="set-quality" aria-describedby="graphics-mode"><option value="auto">Automatic</option><option value="high">High</option><option value="low">Low (faster)</option></select></label>
+        <p id="graphics-mode" class="graphics-mode" hidden="">Compatibility graphics are active with reduced effects. Your saved graphics preference is kept for the next visit.</p>
+        <label class="set"><span>Motion</span><select id="set-motion"><option value="auto">Match my system</option><option value="full">Full camera motion</option><option value="reduced">Reduced</option></select></label>
+      </div>
+    </div>
+  </section>
+
+  <section id="controls" class="overlay sheet" aria-labelledby="controls-title" hidden="">
+    <div class="sheet-card wide">
+      <header class="sheet-head"><button class="back" type="button" data-go="back" aria-label="Back">←</button><h2 id="controls-title">Controls</h2></header>
+      <div class="controls-grid">
+        <div>
+          <h3>Keyboard</h3>
+          <table class="keys">
+            <tbody><tr><td><kbd>W</kbd></td><td>Accelerator</td></tr>
+            <tr><td><kbd>S</kbd></td><td>Brake</td></tr>
+            <tr><td><kbd>A</kbd> <kbd>D</kbd></td><td>Steer</td></tr>
+            <tr><td><kbd>Space</kbd></td><td>Clutch (hold to press, let go to release slowly)</td></tr>
+            <tr><td><kbd>E</kbd> / <kbd>Q</kbd></td><td>Shift up / down</td></tr>
+            <tr><td><kbd>1</kbd>–<kbd>0</kbd></td><td>Select a gear (<span data-gear-keys="">1-7</span>)</td></tr>
+            <tr><td><kbd>G</kbd></td><td>Semi trucks: flip the range selector (low gears 1-5, high 6-10; the number keys flip it for you)</td></tr>
+            <tr><td><kbd>N</kbd> / <kbd>R</kbd></td><td>Neutral / reverse</td></tr>
+            <tr><td><kbd>F</kbd></td><td>Ignition</td></tr>
+            <tr><td><kbd>T</kbd></td><td>Switch between automatic and manual</td></tr>
+            <tr><td><kbd>P</kbd></td><td>Parking brake</td></tr>
+            <tr><td><kbd>C</kbd></td><td>Camera</td></tr>
+            <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Glance left / right (or drag with the mouse)</td></tr>
+            <tr><td><kbd>Esc</kbd></td><td>Pause and settings</td></tr>
+          </tbody></table>
+          <p class="note">You can also tap or drag the lower-right H-pattern while holding the clutch. <b>Mouse shifter</b> (on the menu, in Pause or in Settings) captures the mouse: moving it operates the H-pattern continuously, without holding a button or aiming at the widget. Hold left-click for clutch before moving into a gear, right-click for gas, and Space for brake. Return through neutral before crossing to another gear rail. Escape releases the mouse and pauses; Resume captures it again. Shift also holds the clutch.</p>
+          <button class="ghost" type="button" data-act="tutorial">Quick-start guide</button>
+          <button class="ghost" type="button" data-act="lesson">Full guided tutorial</button>
+        </div>
+        <div>
+          <h3>Touch</h3>
+          <p><b>GAS and STEER are on both sides</b>: hold gas with one hand and steer with the other. The blue <b>CLUTCH</b> disengages the engine; <b>BRAKE</b> slows the car. Hold the clutch and <b>drag the central gear lever</b> out of its gear, through neutral and into the next slot. Slide the clutch up for a slow release; slide brake or gas up for more. <b>HOLD</b> latches the clutch while you move the lever. Simplified shift buttons and a hood camera are optional in Settings.</p>
+          <h3>Semi: shift from 5th to 6th</h3>
+          <p>Tap <b>HIGH 6–10</b> beside the shifter, press <b>CLUTCH</b>, and move the lever through <b>neutral</b>. The labels change to 6–10: select <b>6</b>, in the same slot as low-range 1, then ease the clutch out. A queued change waits for neutral. To return to gears 1–5, choose <b>LOW</b> and pass through neutral again.</p>
+          <p>Keyboard: clutch in, press <b>6</b> for sixth (<b>0</b> for tenth); number keys select the range automatically. <b>G</b> toggles the range for the physical lever. <b>E/Q</b>, controller shifts and touch <b>+/−</b> cross between fifth and sixth automatically. The guided tutorial includes a parked range-change practice for both semis.</p>
+          <h3>Controller</h3>
+          <table class="keys">
+            <tbody><tr><td>Left stick</td><td>Steer</td></tr>
+            <tr><td>RT / LT</td><td>Accelerator / brake</td></tr>
+            <tr><td>LB</td><td>Clutch</td></tr>
+            <tr><td>A / X</td><td>Shift up / down</td></tr>
+            <tr><td>B / Y</td><td>Neutral / reverse (stopped)</td></tr>
+            <tr><td>View or D-pad up</td><td>Ignition</td></tr>
+            <tr><td>D-pad down</td><td>Parking brake</td></tr>
+            <tr><td>RB · Right stick</td><td>Camera · look around</td></tr>
+            <tr><td>Menu</td><td>Pause</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <div class="howto">
+        <h3>Automatic</h3>
+        <p><kbd>W</kbd> goes, <kbd>S</kbd> or <kbd>Space</kbd> brakes, <kbd>A</kbd> <kbd>D</kbd> steer. The engine starts itself, the gears change themselves, and the car waits at a stop until you press the gas. <kbd>R</kbd> switches between reverse and drive.</p>
+        <h3>Stalled?</h3>
+        <p>The engine is off, so the gas does nothing. Hold the clutch and press <kbd>F</kbd> (START on touch), or press <kbd>N</kbd> for neutral and then <kbd>F</kbd>. Then pull away again as below. On Guided, <kbd>F</kbd> alone does it.</p>
+        <h3>Pulling away</h3>
+        <ol><li>Press the clutch and start the engine.</li><li>With the clutch down, pick first gear.</li><li>Add a little gas, then let the clutch out slowly. The engine note drops and the car starts to roll at the bite point.</li><li>Once you are moving, let the clutch out fully and accelerate.</li></ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="pause" class="overlay sheet" aria-labelledby="pause-title" hidden="">
+    <div class="sheet-card narrow">
+      <h2 id="pause-title">Paused</h2>
+      <details id="session-details" class="session-details" open=""><summary>Session stats</summary><dl class="session" id="session-stats"><div><dt>Distance</dt><dd>0.0 mi</dd></div><div><dt>Highest gear</dt><dd>–</dd></div><div><dt>Smooth shifts</dt><dd>0</dd></div><div><dt>Rough shifts</dt><dd>0</dd></div><div><dt>Stalls</dt><dd>0</dd></div><div><dt>Collisions</dt><dd>0</dd></div></dl></details>
+      <div class="stack">
+        <button class="cta" type="button" data-act="resume">Resume</button>
+        <button class="ghost" type="button" data-act="restart">Restart</button>
+        <button id="pause-transmission" class="ghost" type="button">Switch to Automatic</button>
+        <button id="pause-shifter" class="ghost" type="button">Shift with mouse</button>
+        <button class="ghost" type="button" data-act="lesson">Guided tutorial</button>
+        <button class="ghost" type="button" data-go="settings">Settings</button>
+        <button class="ghost" type="button" data-go="controls">Controls</button>
+        <button class="ghost desktop-only" type="button" data-act="fullscreen" aria-label="Enter fullscreen" title="Enter fullscreen"><span class="fullscreen-label">Fullscreen</span></button>
+        <button class="ghost" type="button" data-act="quit">Main menu</button>
+      </div>
+      <div class="mobile-actions mobile-only"><button class="ghost" type="button" data-act="camera">Camera</button><button class="ghost" type="button" data-act="fullscreen" aria-label="Enter fullscreen" title="Enter fullscreen"><span class="fullscreen-label">Fullscreen</span></button><button id="mobile-map" class="ghost" type="button" data-act="mobile-map" aria-pressed="false">Map</button></div>
+    </div>
+  </section>
+
+  <section id="results" class="overlay results" aria-labelledby="res-title" hidden="">
+    <div class="res-card">
+      <p id="res-kicker" class="kicker">Challenge</p>
+      <h2 id="res-title">Complete</h2>
+      <div class="stars" id="res-stars" aria-label="0 stars"><span>★</span><span>★</span><span>★</span></div>
+      <div class="res-score"><strong id="res-score">0</strong><span>/ 1,000</span></div>
+      <p id="res-record" class="record" hidden="">New personal best!</p>
+      <div class="res-actions">
+        <button class="cta" type="button" data-act="retry">Retry</button>
+        <button class="ghost" type="button" data-act="free">Free Drive</button>
+        <button class="ghost" type="button" data-act="quit">Menu</button>
+      </div>
+      <ul id="res-parts" class="res-parts"></ul>
+      <p id="res-tip" class="res-tip"></p>
+    </div>
+  </section>
+
+  <div id="rotate" class="rotate" hidden="">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="8" width="24" height="44" rx="4" fill="none" stroke="currentColor" stroke-width="3"></rect><path d="M48 40a14 14 0 0 1-10 14M38 54l2-6M38 54l6 1" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path></svg>
+    <p><b>Turn your phone sideways</b> to drive. Landscape gives you room for the pedals, steering and shifter.</p>
+    <button class="ghost" type="button" id="rotate-dismiss">Play in portrait anyway</button>
+  </div>
+  <div id="loading" class="loading" role="status" hidden=""><span class="spinner" aria-hidden="true"></span><span id="loading-text">Paving the roads…</span></div>
+  <div id="fallback" class="fallback" role="alert" hidden="">
+    <h2 id="fallback-title" tabindex="-1">3D graphics could not start</h2>
+    <p>Close other graphics-heavy tabs and try again. If this keeps happening, enable graphics acceleration in your browser’s System settings, then relaunch the browser. This game needs WebGL 2. Your saved settings are kept.</p>
+    <div class="fallback-actions"><button id="retry-startup" class="ghost" type="button">Try again</button><a class="ghost" href="/games/">Browse games</a></div>
+  </div>
+</main>
+
+<div data-nosnippet="" class="rex-feedback-slot" style="box-sizing: border-box; display: block; position: relative; width: min(100% - 32px, 1040px); max-width: 1040px; margin: 24px auto; grid-column: 1 / -1; flex: 0 0 auto; align-self: center; clear: both; min-height: 74px;"><random-express-feedback style="display: block;"></random-express-feedback></div><article class="about" id="about" aria-labelledby="about-title">
+  <h2 id="about-title">A free manual driving simulator in your browser</h2>
+  <p>Clutch &amp; Shift puts you in the driver's seat of the Kestrel Vanta GT, a fictional sporty hatchback with a six-speed manual gearbox. The engine, clutch and gears are simulated together, so the car behaves the way a stick shift does: rev it in neutral and nothing moves, let the clutch out too fast at idle and it stalls, start off in third and it bogs, drop down a gear and the revs climb while engine braking slows you.</p>
+  <h3>Pick your vehicle</h3>
+  <p>Six manuals share the same clutch and gearbox physics, each with its own engine, gearing and handling: the front-drive <b>Vanta GT</b> hatchback, the <b>Apex V8</b> sports car with a seven-speed, the <b>RZ Turbo</b> tuner with boost that builds from about 3,000 rpm and a blow-off valve, a <b>1972 half-ton pickup</b> with a four-speed and a granny-low first gear, and a <b>semi truck</b> with a ten-speed range box (gears 1-5 in low range, 6-10 in high), driven bobtail or hauling a loaded 53 ft trailer that can jackknife. Every vehicle can be driven from the left or the right seat.</p>
+  <h3>How the clutch works here</h3>
+  <p>Holding the clutch disconnects the engine from the wheels. As you let it out, it starts to grip at the biting point: the engine note drops slightly and the car begins to creep. A little gas plus a slow, steady release gives a smooth launch. On a keyboard the clutch comes up along a gentle curve when you let go of Space (or left-click in Mouse driving), and you can press the clutch again at any moment to pause the release. On touch screens you can slide the clutch pedal for fine control.</p>
+  <h3>Where you can drive</h3>
+  <ul>
+    <li><b>Downtown</b>: a grid of streets with working traffic lights, crosswalks, four-way stops and the Main Street Roundabout at 2nd Avenue. Yield to circulating traffic and follow the arrows counterclockwise.</li>
+    <li><b>Maple Heights</b>: quiet residential streets with a steep hill and a stop sign right on the slope, perfect for practicing hill starts with the parking brake.</li>
+    <li><b>Loop 1 Expressway</b>: a three-lane highway loop with an on-ramp, a merge lane and an exit, long enough to settle into fifth and sixth.</li>
+  </ul>
+  <h3>Challenges</h3>
+  <p>Five short challenges score what the car actually did: <b>First Gear</b> (clean starts), <b>Smooth Operator</b> (smooth shifts and stops), <b>Rush Hour</b> (stop-and-go traffic), <b>Highway Run</b> (merge, cruise and exit) and <b>No Stall</b> (one stall ends the run). Shifts are judged by how closely the engine speed matched the wheels when the clutch bit, and by the jolt it caused.</p>
+  <h3 id="saved-progress">Saved progress</h3><aside class="rex-progress-pill" aria-live="polite" data-error="false"><style>body>.rex-progress-pill{display:none!important}.rex-progress-pill{position:fixed;z-index:9000;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));max-width:min(360px,calc(100vw - 24px));display:flex;align-items:center;gap:.65rem;padding:.65rem .72rem .65rem .85rem;border:1px solid rgba(23,37,34,.24);border-radius:999px;background:rgba(255,253,248,.95);color:#172522;box-shadow:0 12px 36px rgba(0,0,0,.18);backdrop-filter:blur(14px);font:700 12px/1.2 Inter,system-ui,sans-serif}.rex-progress-pill[data-error=true]{border-color:#c95542}.rex-progress-pill span{min-width:0}.rex-progress-pill button{min-height:44px;padding:0 .8rem;border:0;border-radius:999px;background:#172522;color:white;font:inherit;cursor:pointer;white-space:nowrap}.rex-progress-pill button:focus-visible{outline:3px solid #d49a3a;outline-offset:2px}@media(max-width:480px){.rex-progress-pill{left:12px;right:12px;justify-content:space-between}}@media(prefers-reduced-motion:reduce){.rex-progress-pill{backdrop-filter:none}}</style><span data-progress-label="">Saved on this device</span><button type="button" data-progress-action="">Save to account</button></aside>
+  <p>Settings, driving totals and challenge bests are saved on this device. Sign in to Random.Express to sync meaningful driving progress to your account; guest play remains available.</p>
+  <h3>Frequently asked questions</h3>
+  <dl class="faq">
+    <dt>Can this teach me to drive a manual car?</dt>
+    <dd>It is a game, not driving instruction. It can help you understand what the clutch, gears and revs are doing, but practice in a real car with a qualified instructor.</dd>
+    <dt>Does it work on phones and tablets?</dt>
+    <dd>Yes. Gas and steering are available on both screen sides for two-hand driving, with larger tablet targets, a central H-pattern shifter, and clutch and brake on the left. A guided tutorial walks you through starting, shifting, stopping, reversing and parking. Optional shift buttons, a hood view and clutch assist provide an easier setup.</dd>
+    <dt>Can I use a game controller?</dt>
+    <dd>Yes. Xbox-style controllers work with analog triggers for gas and brake and LB for the clutch.</dd>
+    <dt>What do the difficulty levels change?</dt>
+    <dd>Guided releases the clutch more gently, resists stalling and suggests gears. Standard is the intended experience. Realistic has a sharper clutch, stalls more easily, brakes harder on the engine and makes you release the parking brake yourself on hills.</dd>
+  </dl>
+  <p><a href="/parallel-parking/">Parallel Parking Challenge</a> · <a href="/games/">More free browser games</a> · <a href="/">Random.Express home</a></p>
+</article>
+<noscript><p class="about">Clutch &amp; Shift needs JavaScript and WebGL.</p></noscript>
+
+
+<random-express-activity data-hidden="" data-state="menu" data-touch="false"></random-express-activity></body></html>
